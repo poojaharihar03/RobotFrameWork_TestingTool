@@ -68,9 +68,11 @@ The test results will be displayed in the terminal, indicating the pass or fail 
 We can also view the report it will be saved in the same director as the files you have created.
 NOTE- please keep the .robot file and .ipymb..py file in same directory 
 ## Here is the output report:
-![image](https://github.com/poojaharihar03/RobotFrameWork_TestingTool/assets/88924201/15d0fee0-69be-4370-8e15-ccddeb2be6fc)
+![image](https://github.com/poojaharihar03/RobotFrameWork_TestingTool/assets/88924201/93e012ba-5ea0-4784-ab79-3f83bf8640cf)
+
 
 ## The log snip:
-![image](https://github.com/poojaharihar03/RobotFrameWork_TestingTool/assets/88924201/516a78e3-4bb3-41ed-b577-b0a9f1f6ef51)
+![image](https://github.com/poojaharihar03/RobotFrameWork_TestingTool/assets/88924201/3c0ad11f-81d4-492a-b716-10723dc0752f)
+
 
 
