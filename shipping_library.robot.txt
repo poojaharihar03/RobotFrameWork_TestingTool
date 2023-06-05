@@ -1,0 +1,12 @@
+*** Settings ***
+Library    Shipping.py
+
+*** Keywords ***
+Set User Type
+    [Arguments]    ${user_type}
+    Set User Type    ${user_type}
+
+Calculate Shipping Cost
+    [Arguments]    ${total_order_cost}    ${shipping_option}
+    ${shipping_cost}    Calculate Shipping Cost    ${total_order_cost}    ${shipping_option}
+    [Return]    ${shipping_cost}

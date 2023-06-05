@@ -1,0 +1,1415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.12 on win32)" generated="20230605 22:58:27.385" rpa="false" schemaversion="3">
+<suite id="s1" name="Shipping" source="C:\Users\Pooja\Desktop\ST\shipping.robot">
+<test id="s1-t1" name="TC1" line="12">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.440" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.439" endtime="20230605 22:58:27.440"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.439" endtime="20230605 22:58:27.440"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>40</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.441" level="INFO">${total_order_cost} = 40</msg>
+<status status="PASS" starttime="20230605 22:58:27.440" endtime="20230605 22:58:27.441"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.441" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.441" endtime="20230605 22:58:27.441"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>10</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.443" level="INFO">${shipping_cost} = 10</msg>
+<status status="PASS" starttime="20230605 22:58:27.442" endtime="20230605 22:58:27.443"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.442" endtime="20230605 22:58:27.443"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.442" endtime="20230605 22:58:27.443"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.441" endtime="20230605 22:58:27.443"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.441" endtime="20230605 22:58:27.443"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.440" endtime="20230605 22:58:27.443"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>10</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20230605 22:58:27.443" endtime="20230605 22:58:27.443"/>
+</kw>
+<tag>Valid</tag>
+<status status="PASS" starttime="20230605 22:58:27.438" endtime="20230605 22:58:27.443"/>
+</test>
+<test id="s1-t2" name="TC2" line="18">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.445" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.444" endtime="20230605 22:58:27.445"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.444" endtime="20230605 22:58:27.445"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>40</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.445" level="INFO">${total_order_cost} = 40</msg>
+<status status="PASS" starttime="20230605 22:58:27.445" endtime="20230605 22:58:27.445"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.447" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.445" endtime="20230605 22:58:27.447"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>10</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.449" level="INFO">${shipping_cost} = 10</msg>
+<status status="PASS" starttime="20230605 22:58:27.448" endtime="20230605 22:58:27.449"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.448" endtime="20230605 22:58:27.449"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.448" endtime="20230605 22:58:27.449"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.447" endtime="20230605 22:58:27.449"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.447" endtime="20230605 22:58:27.449"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.445" endtime="20230605 22:58:27.449"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>20</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20230605 22:58:27.450" level="FAIL">10 != 20</msg>
+<status status="FAIL" starttime="20230605 22:58:27.450" endtime="20230605 22:58:27.450"/>
+</kw>
+<tag>Valid</tag>
+<status status="FAIL" starttime="20230605 22:58:27.444" endtime="20230605 22:58:27.450">10 != 20</status>
+</test>
+<test id="s1-t3" name="TC3" line="24">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.452" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.451" endtime="20230605 22:58:27.452"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.451" endtime="20230605 22:58:27.452"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>80</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.453" level="INFO">${total_order_cost} = 80</msg>
+<status status="PASS" starttime="20230605 22:58:27.453" endtime="20230605 22:58:27.453"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.454" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.453" endtime="20230605 22:58:27.454"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>5</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.456" level="INFO">${shipping_cost} = 5</msg>
+<status status="PASS" starttime="20230605 22:58:27.455" endtime="20230605 22:58:27.456"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.455" endtime="20230605 22:58:27.456"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.454" endtime="20230605 22:58:27.456"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.454" endtime="20230605 22:58:27.456"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.454" endtime="20230605 22:58:27.456"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.452" endtime="20230605 22:58:27.456"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20230605 22:58:27.456" endtime="20230605 22:58:27.456"/>
+</kw>
+<tag>Valid</tag>
+<status status="PASS" starttime="20230605 22:58:27.451" endtime="20230605 22:58:27.457"/>
+</test>
+<test id="s1-t4" name="TC4" line="30">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.458" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.457" endtime="20230605 22:58:27.458"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.457" endtime="20230605 22:58:27.458"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>80</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.459" level="INFO">${total_order_cost} = 80</msg>
+<status status="PASS" starttime="20230605 22:58:27.458" endtime="20230605 22:58:27.459"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.459" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.459" endtime="20230605 22:58:27.459"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>5</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.461" level="INFO">${shipping_cost} = 5</msg>
+<status status="PASS" starttime="20230605 22:58:27.460" endtime="20230605 22:58:27.461"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.460" endtime="20230605 22:58:27.461"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.460" endtime="20230605 22:58:27.461"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.459" endtime="20230605 22:58:27.461"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.459" endtime="20230605 22:58:27.461"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.458" endtime="20230605 22:58:27.461"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>15</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20230605 22:58:27.462" level="FAIL">5 != 15</msg>
+<status status="FAIL" starttime="20230605 22:58:27.461" endtime="20230605 22:58:27.462"/>
+</kw>
+<tag>Valid</tag>
+<status status="FAIL" starttime="20230605 22:58:27.457" endtime="20230605 22:58:27.462">5 != 15</status>
+</test>
+<test id="s1-t5" name="TC5" line="36">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.464" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.463" endtime="20230605 22:58:27.464"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.463" endtime="20230605 22:58:27.464"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>120</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.465" level="INFO">${total_order_cost} = 120</msg>
+<status status="PASS" starttime="20230605 22:58:27.465" endtime="20230605 22:58:27.465"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.466" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.465" endtime="20230605 22:58:27.466"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>0</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.468" level="INFO">${shipping_cost} = 0</msg>
+<status status="PASS" starttime="20230605 22:58:27.467" endtime="20230605 22:58:27.468"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.467" endtime="20230605 22:58:27.468"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.467" endtime="20230605 22:58:27.468"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.466" endtime="20230605 22:58:27.468"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.466" endtime="20230605 22:58:27.468"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.464" endtime="20230605 22:58:27.468"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20230605 22:58:27.469" endtime="20230605 22:58:27.469"/>
+</kw>
+<tag>Valid</tag>
+<status status="PASS" starttime="20230605 22:58:27.463" endtime="20230605 22:58:27.469"/>
+</test>
+<test id="s1-t6" name="TC6" line="42">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.470" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.470" endtime="20230605 22:58:27.470"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.470" endtime="20230605 22:58:27.470"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>120</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.471" level="INFO">${total_order_cost} = 120</msg>
+<status status="PASS" starttime="20230605 22:58:27.471" endtime="20230605 22:58:27.471"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.471" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.471" endtime="20230605 22:58:27.471"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>0</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.473" level="INFO">${shipping_cost} = 0</msg>
+<status status="PASS" starttime="20230605 22:58:27.473" endtime="20230605 22:58:27.473"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.472" endtime="20230605 22:58:27.473"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.472" endtime="20230605 22:58:27.473"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.472" endtime="20230605 22:58:27.473"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.471" endtime="20230605 22:58:27.473"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.470" endtime="20230605 22:58:27.473"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>10</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20230605 22:58:27.474" level="FAIL">0 != 10</msg>
+<status status="FAIL" starttime="20230605 22:58:27.474" endtime="20230605 22:58:27.474"/>
+</kw>
+<tag>Valid</tag>
+<status status="FAIL" starttime="20230605 22:58:27.469" endtime="20230605 22:58:27.474">0 != 10</status>
+</test>
+<test id="s1-t7" name="TC7" line="48">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.475" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.475" endtime="20230605 22:58:27.475"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.475" endtime="20230605 22:58:27.475"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>40</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.476" level="INFO">${total_order_cost} = 40</msg>
+<status status="PASS" starttime="20230605 22:58:27.476" endtime="20230605 22:58:27.476"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.476" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.476" endtime="20230605 22:58:27.476"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.478" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.477" endtime="20230605 22:58:27.478"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.477" endtime="20230605 22:58:27.478"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.477" endtime="20230605 22:58:27.478"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.477" endtime="20230605 22:58:27.478"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.475" endtime="20230605 22:58:27.478"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.478" endtime="20230605 22:58:27.479"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.474" endtime="20230605 22:58:27.479"/>
+</test>
+<test id="s1-t8" name="TC8" line="54">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.480" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.480" endtime="20230605 22:58:27.480"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.479" endtime="20230605 22:58:27.480"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>40</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.481" level="INFO">${total_order_cost} = 40</msg>
+<status status="PASS" starttime="20230605 22:58:27.480" endtime="20230605 22:58:27.481"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.481" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.481" endtime="20230605 22:58:27.481"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.483" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.483" endtime="20230605 22:58:27.483"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.482" endtime="20230605 22:58:27.483"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.482" endtime="20230605 22:58:27.483"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.482" endtime="20230605 22:58:27.483"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.480" endtime="20230605 22:58:27.483"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.483" endtime="20230605 22:58:27.484"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.479" endtime="20230605 22:58:27.484"/>
+</test>
+<test id="s1-t9" name="TC9" line="60">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.485" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.485" endtime="20230605 22:58:27.485"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.484" endtime="20230605 22:58:27.485"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>80</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.486" level="INFO">${total_order_cost} = 80</msg>
+<status status="PASS" starttime="20230605 22:58:27.485" endtime="20230605 22:58:27.486"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.486" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.486" endtime="20230605 22:58:27.486"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.487" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.487" endtime="20230605 22:58:27.487"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.487" endtime="20230605 22:58:27.487"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.487" endtime="20230605 22:58:27.488"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.486" endtime="20230605 22:58:27.488"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.485" endtime="20230605 22:58:27.488"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.488" endtime="20230605 22:58:27.488"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.484" endtime="20230605 22:58:27.488"/>
+</test>
+<test id="s1-t10" name="TC10" line="66">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.489" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.489" endtime="20230605 22:58:27.489"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.489" endtime="20230605 22:58:27.489"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>80</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.490" level="INFO">${total_order_cost} = 80</msg>
+<status status="PASS" starttime="20230605 22:58:27.490" endtime="20230605 22:58:27.490"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.490" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.490" endtime="20230605 22:58:27.490"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.492" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.491" endtime="20230605 22:58:27.492"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.491" endtime="20230605 22:58:27.492"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.491" endtime="20230605 22:58:27.492"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.490" endtime="20230605 22:58:27.492"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.489" endtime="20230605 22:58:27.492"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.492" endtime="20230605 22:58:27.492"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.488" endtime="20230605 22:58:27.492"/>
+</test>
+<test id="s1-t11" name="TC11" line="72">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.494" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.493" endtime="20230605 22:58:27.494"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.493" endtime="20230605 22:58:27.494"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>120</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.495" level="INFO">${total_order_cost} = 120</msg>
+<status status="PASS" starttime="20230605 22:58:27.494" endtime="20230605 22:58:27.495"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.495" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.495" endtime="20230605 22:58:27.495"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.497" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.496" endtime="20230605 22:58:27.497"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.496" endtime="20230605 22:58:27.497"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.496" endtime="20230605 22:58:27.497"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.495" endtime="20230605 22:58:27.497"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.494" endtime="20230605 22:58:27.497"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.497" endtime="20230605 22:58:27.498"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.493" endtime="20230605 22:58:27.498"/>
+</test>
+<test id="s1-t12" name="TC12" line="78">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.499" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.499" endtime="20230605 22:58:27.499"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.498" endtime="20230605 22:58:27.499"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>120</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.500" level="INFO">${total_order_cost} = 120</msg>
+<status status="PASS" starttime="20230605 22:58:27.500" endtime="20230605 22:58:27.500"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.500" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.500" endtime="20230605 22:58:27.500"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.502" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.502" endtime="20230605 22:58:27.502"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.501" endtime="20230605 22:58:27.502"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.501" endtime="20230605 22:58:27.502"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.501" endtime="20230605 22:58:27.502"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.499" endtime="20230605 22:58:27.502"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.502" endtime="20230605 22:58:27.503"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.498" endtime="20230605 22:58:27.503"/>
+</test>
+<test id="s1-t13" name="TC13" line="84">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.504" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.504" endtime="20230605 22:58:27.504"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.503" endtime="20230605 22:58:27.504"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>150</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.505" level="INFO">${total_order_cost} = 150</msg>
+<status status="PASS" starttime="20230605 22:58:27.505" endtime="20230605 22:58:27.505"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.505" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.505" endtime="20230605 22:58:27.505"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>0</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.507" level="INFO">${shipping_cost} = 0</msg>
+<status status="PASS" starttime="20230605 22:58:27.507" endtime="20230605 22:58:27.507"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.506" endtime="20230605 22:58:27.507"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.506" endtime="20230605 22:58:27.507"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.506" endtime="20230605 22:58:27.507"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.505" endtime="20230605 22:58:27.507"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.504" endtime="20230605 22:58:27.508"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20230605 22:58:27.508" endtime="20230605 22:58:27.508"/>
+</kw>
+<tag>Valid</tag>
+<status status="PASS" starttime="20230605 22:58:27.503" endtime="20230605 22:58:27.508"/>
+</test>
+<test id="s1-t14" name="TC14" line="90">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.512" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.511" endtime="20230605 22:58:27.512"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.510" endtime="20230605 22:58:27.512"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>150</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.514" level="INFO">${total_order_cost} = 150</msg>
+<status status="PASS" starttime="20230605 22:58:27.513" endtime="20230605 22:58:27.514"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.515" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.515" endtime="20230605 22:58:27.516"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>0</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.520" level="INFO">${shipping_cost} = 0</msg>
+<status status="PASS" starttime="20230605 22:58:27.519" endtime="20230605 22:58:27.520"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.519" endtime="20230605 22:58:27.520"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.517" endtime="20230605 22:58:27.520"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.517" endtime="20230605 22:58:27.521"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.516" endtime="20230605 22:58:27.521"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.512" endtime="20230605 22:58:27.521"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>10</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20230605 22:58:27.522" level="FAIL">0 != 10</msg>
+<status status="FAIL" starttime="20230605 22:58:27.521" endtime="20230605 22:58:27.522"/>
+</kw>
+<tag>Valid</tag>
+<status status="FAIL" starttime="20230605 22:58:27.509" endtime="20230605 22:58:27.522">0 != 10</status>
+</test>
+<test id="s1-t15" name="TC15" line="96">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.523" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.523" endtime="20230605 22:58:27.523"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.523" endtime="20230605 22:58:27.523"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>150</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.524" level="INFO">${total_order_cost} = 150</msg>
+<status status="PASS" starttime="20230605 22:58:27.524" endtime="20230605 22:58:27.524"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.525" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.524" endtime="20230605 22:58:27.525"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.527" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.526" endtime="20230605 22:58:27.527"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.526" endtime="20230605 22:58:27.527"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.525" endtime="20230605 22:58:27.527"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.525" endtime="20230605 22:58:27.527"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.524" endtime="20230605 22:58:27.527"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.528" endtime="20230605 22:58:27.528"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.522" endtime="20230605 22:58:27.528"/>
+</test>
+<test id="s1-t16" name="TC16" line="102">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.530" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.530" endtime="20230605 22:58:27.531"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.529" endtime="20230605 22:58:27.531"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>150</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.532" level="INFO">${total_order_cost} = 150</msg>
+<status status="PASS" starttime="20230605 22:58:27.531" endtime="20230605 22:58:27.532"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.532" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.532" endtime="20230605 22:58:27.533"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.534" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.534" endtime="20230605 22:58:27.534"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.534" endtime="20230605 22:58:27.534"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.533" endtime="20230605 22:58:27.534"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.533" endtime="20230605 22:58:27.534"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.531" endtime="20230605 22:58:27.535"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.535" endtime="20230605 22:58:27.535"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.529" endtime="20230605 22:58:27.535"/>
+</test>
+<test id="s1-t17" name="TC17" line="108">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.536" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.536" endtime="20230605 22:58:27.536"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.536" endtime="20230605 22:58:27.536"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>0</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.538" level="INFO">${total_order_cost} = 0</msg>
+<status status="PASS" starttime="20230605 22:58:27.537" endtime="20230605 22:58:27.538"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.538" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.538" endtime="20230605 22:58:27.538"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>10</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.541" level="INFO">${shipping_cost} = 10</msg>
+<status status="PASS" starttime="20230605 22:58:27.540" endtime="20230605 22:58:27.541"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.540" endtime="20230605 22:58:27.542"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.539" endtime="20230605 22:58:27.542"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.539" endtime="20230605 22:58:27.542"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.538" endtime="20230605 22:58:27.542"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.537" endtime="20230605 22:58:27.543"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>10</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" starttime="20230605 22:58:27.543" endtime="20230605 22:58:27.544"/>
+</kw>
+<tag>Valid</tag>
+<status status="PASS" starttime="20230605 22:58:27.535" endtime="20230605 22:58:27.544"/>
+</test>
+<test id="s1-t18" name="TC18" line="114">
+<kw name="Set User Type">
+<arg>Valid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.546" level="INFO">${user_type} = Valid</msg>
+<status status="PASS" starttime="20230605 22:58:27.545" endtime="20230605 22:58:27.546"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.545" endtime="20230605 22:58:27.546"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>0</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.547" level="INFO">${total_order_cost} = 0</msg>
+<status status="PASS" starttime="20230605 22:58:27.547" endtime="20230605 22:58:27.547"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.547" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.547" endtime="20230605 22:58:27.547"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Valid Shipping Cost">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${total_order_cost} &lt; 50</arg>
+<arg>Set Shipping Cost</arg>
+<arg>10</arg>
+<arg>ELSE IF</arg>
+<arg>50 &lt;= ${total_order_cost} &lt;= 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>5</arg>
+<arg>ELSE IF</arg>
+<arg>${total_order_cost} &gt; 100</arg>
+<arg>Set Shipping Cost</arg>
+<arg>0</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Shipping Cost">
+<arg>10</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.554" level="INFO">${shipping_cost} = 10</msg>
+<status status="PASS" starttime="20230605 22:58:27.554" endtime="20230605 22:58:27.554"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.553" endtime="20230605 22:58:27.554"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.551" endtime="20230605 22:58:27.554"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.549" endtime="20230605 22:58:27.554"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.548" endtime="20230605 22:58:27.554"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.546" endtime="20230605 22:58:27.554"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>20</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20230605 22:58:27.555" level="FAIL">10 != 20</msg>
+<status status="FAIL" starttime="20230605 22:58:27.555" endtime="20230605 22:58:27.555"/>
+</kw>
+<tag>Valid</tag>
+<status status="FAIL" starttime="20230605 22:58:27.544" endtime="20230605 22:58:27.555">10 != 20</status>
+</test>
+<test id="s1-t19" name="TC19" line="120">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.557" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.557" endtime="20230605 22:58:27.557"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.556" endtime="20230605 22:58:27.557"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>0</arg>
+<arg>Standard</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.559" level="INFO">${total_order_cost} = 0</msg>
+<status status="PASS" starttime="20230605 22:58:27.558" endtime="20230605 22:58:27.560"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.561" level="INFO">${shipping_option} = Standard</msg>
+<status status="PASS" starttime="20230605 22:58:27.560" endtime="20230605 22:58:27.561"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.563" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.563" endtime="20230605 22:58:27.563"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.562" endtime="20230605 22:58:27.564"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.562" endtime="20230605 22:58:27.564"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.561" endtime="20230605 22:58:27.564"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.558" endtime="20230605 22:58:27.564"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.564" endtime="20230605 22:58:27.565"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.556" endtime="20230605 22:58:27.565"/>
+</test>
+<test id="s1-t20" name="TC20" line="126">
+<kw name="Set User Type">
+<arg>Invalid</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user_type}</arg>
+<arg>${type}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.567" level="INFO">${user_type} = Invalid</msg>
+<status status="PASS" starttime="20230605 22:58:27.566" endtime="20230605 22:58:27.567"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.566" endtime="20230605 22:58:27.567"/>
+</kw>
+<kw name="Calculate Shipping Cost">
+<arg>0</arg>
+<arg>Express</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${total_order_cost}</arg>
+<arg>${order_cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.568" level="INFO">${total_order_cost} = 0</msg>
+<status status="PASS" starttime="20230605 22:58:27.567" endtime="20230605 22:58:27.568"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_option}</arg>
+<arg>${option}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.568" level="INFO">${shipping_option} = Express</msg>
+<status status="PASS" starttime="20230605 22:58:27.568" endtime="20230605 22:58:27.568"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${user_type}' == 'Valid'</arg>
+<arg>Calculate Valid Shipping Cost</arg>
+<arg>ELSE</arg>
+<arg>Calculate Invalid Shipping Cost</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Calculate Invalid Shipping Cost">
+<kw name="Set Shipping Cost">
+<arg>Error: Invalid User</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>${cost}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230605 22:58:27.570" level="INFO">${shipping_cost} = Error: Invalid User</msg>
+<status status="PASS" starttime="20230605 22:58:27.569" endtime="20230605 22:58:27.570"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.569" endtime="20230605 22:58:27.570"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.569" endtime="20230605 22:58:27.570"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.568" endtime="20230605 22:58:27.570"/>
+</kw>
+<status status="PASS" starttime="20230605 22:58:27.567" endtime="20230605 22:58:27.570"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${shipping_cost}</arg>
+<arg>Error: Invalid User</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230605 22:58:27.570" endtime="20230605 22:58:27.574"/>
+</kw>
+<tag>Invalid</tag>
+<status status="PASS" starttime="20230605 22:58:27.565" endtime="20230605 22:58:27.574"/>
+</test>
+<status status="FAIL" starttime="20230605 22:58:27.389" endtime="20230605 22:58:27.575"/>
+</suite>
+<statistics>
+<total>
+<stat pass="15" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="10" fail="0" skip="0">Invalid</stat>
+<stat pass="5" fail="5" skip="0">Valid</stat>
+</tag>
+<suite>
+<stat pass="15" fail="5" skip="0" id="s1" name="Shipping">Shipping</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
